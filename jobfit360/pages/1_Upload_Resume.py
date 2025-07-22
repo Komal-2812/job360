@@ -2,22 +2,23 @@
 import streamlit as st
 from components.resume_parser import extract_text_from_pdf, extract_text_from_docx, extract_sections
 
-st.set_page_config(page_title="Upload Resume", layout="centered")
-
-st.title('📤 Upload Resume')
+st.set_page_config(page_title="Upload Resume", layout="wide")
+st.title("📤 Upload Your Resume")
 
 st.markdown("""
-Welcome to **JobFit360**!  
-Upload your resume below in **PDF** or **DOCX** format.  
-We’ll extract key info like skills, experience, and contact details ✨
+Welcome to **JobFit360**.  
+Upload your resume in **PDF** or **DOCX** format and we’ll extract your:
+- 📛 Name, 📧 Email, 📞 Phone  
+- 🎓 Education, 🧠 Skills, 💼 Experience  
+- 📁 Projects and 🎯 Preferred Role  
 """)
 
-uploaded_file = st.file_uploader("📄 Upload your resume (PDF or DOCX)", type=["pdf", "docx"])
+uploaded_file = st.file_uploader("📄 Upload your resume", type=["pdf", "docx"])
 
 if uploaded_file:
-    st.success("✅ File uploaded successfully!")
+    st.success("✅ File uploaded successfully.")
 
-    with st.spinner("🔍 Extracting resume content..."):
+    with st.spinner("🔍 Extracting details..."):
         if uploaded_file.type == "application/pdf":
             text = extract_text_from_pdf(uploaded_file)
         else:
@@ -27,7 +28,7 @@ if uploaded_file:
         st.session_state['resume_data'] = parsed_data
 
     st.markdown("---")
-    st.subheader("📋 Parsed Resume Summary")
+    st.subheader("📋 Resume Summary")
 
     col1, col2 = st.columns(2)
 
@@ -43,6 +44,7 @@ if uploaded_file:
         st.markdown(f"**🛠 Skills:** {', '.join(parsed_data.get('skills', [])) or 'N/A'}")
         st.markdown(f"**📁 Projects:** {', '.join(parsed_data.get('projects', [])) or 'N/A'}")
 
-    st.success("✅ Resume data stored! Use the left menu to view your ATS Score or Matched Jobs.")
+    st.success("📌 Resume details saved. Go to the left sidebar ➡ to score or find matching jobs.")
+
 else:
-    st.info("👈 Upload your resume above to begin analysis.")
+    st.info("👈 Upload your resume to begin. Supported formats: PDF or DOCX")
