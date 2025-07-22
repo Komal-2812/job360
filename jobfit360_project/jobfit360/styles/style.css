@@ -1,0 +1,17 @@
+body {
+    font-family: 'Segoe UI', sans-serif;
+}
+.job-card, .info-box {
+    border-radius: 12px;
+    padding: 20px;
+    margin: 16px 0;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+.job-card {
+    background-color: #f9f9f9;
+    border: 1px solid #eaeaea;
+}
+.info-box {
+    background-color: #ffffff;
+    border-left: 4px solid #0073b1;
+}
