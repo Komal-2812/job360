@@ -6,7 +6,7 @@ st.title("ℹ️ About JobFit360")
 
 st.markdown("""
 Welcome to **JobFit360** — your AI-powered **resume analysis and job matching assistant**.  
-Whether you're a **student**, a **job seeker**, or a **recruiter**, this platform helps you:
+Whether you're a **student**, a **job seeker**, this platform helps you:
 
 ---
 
@@ -42,7 +42,6 @@ Whether you're a **student**, a **job seeker**, or a **recruiter**, this platfor
 
 ### 🤝 Meet the Creators
 
-Built by aspiring data scientists & developers to help Gen-Z get hired faster!  
 🔗 Visit [JobFit360.com](https://jobfit360.com) *(demo link)*  
 ✉️ Email: support@jobfit360.com
 
