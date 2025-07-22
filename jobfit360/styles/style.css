@@ -1,17 +1,102 @@
+/* Base styling */
 body {
     font-family: 'Segoe UI', sans-serif;
+    background-color: #f8f9fb;
+    color: #2c3e50;
+    line-height: 1.6;
 }
-.job-card, .info-box {
-    border-radius: 12px;
-    padding: 20px;
-    margin: 16px 0;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+
+/* Headings */
+h1, h2, h3, h4, h5 {
+    color: #1a1a1a;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    margin-top: 0.8em;
+    margin-bottom: 0.4em;
 }
+
+/* Job Cards */
 .job-card {
-    background-color: #f9f9f9;
-    border: 1px solid #eaeaea;
+    background: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 14px;
+    padding: 20px;
+    margin: 15px 0;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    transition: all 0.3s ease-in-out;
 }
+.job-card:hover {
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    transform: translateY(-4px);
+}
+
+/* Info Box */
 .info-box {
-    background-color: #ffffff;
-    border-left: 4px solid #0073b1;
+    background: linear-gradient(135deg, #f0f3f5, #dbe2ec);
+    padding: 18px;
+    border-radius: 12px;
+    margin: 20px 0;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+    border-left: 6px solid #4a90e2;
+}
+
+/* Buttons */
+button {
+    background-color: #4a90e2;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 10px 18px;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+button:hover {
+    background-color: #3f7acb;
+}
+
+/* Progress bar fix */
+div[data-testid="stProgress"] > div {
+    background-color: #e1ecff;
+}
+div[data-testid="stProgress"] > div > div {
+    background-color: #4a90e2;
+}
+
+/* File uploader */
+section[data-testid="stFileUploader"] {
+    border: 2px dashed #d9e2ef;
+    background-color: #f9fbff;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    transition: 0.3s all ease;
+}
+section[data-testid="stFileUploader"]:hover {
+    background-color: #eef4fd;
+}
+
+/* Responsive Columns (optional) */
+@media only screen and (max-width: 768px) {
+    .job-card {
+        padding: 15px;
+    }
+    .info-box {
+        padding: 15px;
+    }
+}
+
+/* Animations */
+@keyframes fadeUp {
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+.fade-in {
+    animation: fadeUp 0.6s ease-out forwards;
+}
+
+/* Dark Mode Support (optional override via st.markdown) */
+.dark .job-card, .dark .info-box {
+    background-color: #1e1e1e !important;
+    color: #f0f0f0 !important;
+    border-color: #444 !important;
 }
