@@ -56,7 +56,6 @@ else:
 
 
 # Sidebar
-st.sidebar.image("https://cdn-icons-png.flaticon.com/512/6195/6195700.png", width=80)
 st.sidebar.title("🔧 Settings")
 st.sidebar.button("🌗 Toggle Dark Mode", on_click=toggle_theme)
 st.sidebar.markdown("---")
