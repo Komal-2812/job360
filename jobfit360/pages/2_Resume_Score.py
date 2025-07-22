@@ -1,9 +1,10 @@
 # Resume Score Page
 import streamlit as st
-from components.match_score import calculate_resume_score
 import pandas as pd
 import sys
 from pathlib import Path
+from components.match_score import calculate_resume_score
+
 sys.path.append(str(Path(__file__).resolve().parent.parent))
 
 st.set_page_config(page_title="Resume Score", layout="centered")
