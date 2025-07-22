@@ -17,17 +17,18 @@ h1, h2, h3, h4, h5 {
 
 /* Job Cards */
 .job-card {
-    background: linear-gradient(135deg, #f0f4f9, #dce3ea);  /* soft light blue */
-    border: 1px solid #c5d2de;
+    background: linear-gradient(135deg, #1f1f1f, #2a2a2a);  /* Dark mode friendly */
+    color: #f0f0f0;
+    border: 1px solid #333;
     border-radius: 14px;
     padding: 20px;
     margin: 15px 0;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.3);
     transition: all 0.3s ease-in-out;
 }
 .job-card:hover {
-    transform: scale(1.01);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 24px rgba(0,0,0,0.4);
 }
 
 /* Info Box */
