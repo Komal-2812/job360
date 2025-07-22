@@ -10,7 +10,7 @@ def local_css(file_name):
     else:
         st.warning(f"⚠️ CSS file not found: {file_name}")
 
-# Session state for theme toggle
+# 🌙 Theme Toggle
 if "dark_mode" not in st.session_state:
     st.session_state.dark_mode = False
 
@@ -20,13 +20,23 @@ def toggle_theme():
 # Set page metadata
 st.set_page_config(page_title="JobFit360", layout="wide", page_icon="📄")
 
-# Theme styles
+# Apply Theme Styles
 if st.session_state.dark_mode:
     st.markdown("""
         <style>
         html, body, [class*="css"] {
-            background-color: #121212;
-            color: #f5f5f5;
+            background-color: #121212 !important;
+            color: #f5f5f5 !important;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            color: #ffffff;
+        }
+        a { color: #00f2fe !important; }
+        .job-card, .info-box {
+            background-color: #1e1e1e !important;
+            color: #f0f0f0 !important;
+            border: 1px solid #333 !important;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
         }
         </style>
     """, unsafe_allow_html=True)
@@ -34,11 +44,16 @@ else:
     st.markdown("""
         <style>
         html, body, [class*="css"] {
-            background-color: #f8f9fb;
+            background-color: #ffffff !important;
+            color: #2c3e50 !important;
+        }
+        h1, h2, h3, h4, h5, h6 {
             color: #2c3e50;
         }
+        a { color: #0073b1 !important; }
         </style>
     """, unsafe_allow_html=True)
+
 
 # Sidebar
 st.sidebar.image("https://cdn-icons-png.flaticon.com/512/6195/6195700.png", width=80)
