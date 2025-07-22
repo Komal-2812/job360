@@ -26,18 +26,18 @@ else:
         job_df["Match Score (%)"] = [score["match_score"] for score in match_scores]
 
         # Display job cards
-        for _, row in job_df.iterrows():
-            st.markdown(f"""
-    <div class="job-card">
-        <h4>💼 {row['title']}</h4>
-        <p>
-            <b>🏢 Company:</b> {row['company']}<br>
-            <b>📍 Location:</b> {row['location']}<br>
-            <b>📊 Match Score:</b> {row['Match Score (%)']}%
-        </p>
-        <a href="{row['job_link']}" target="_blank">🔗 Apply Now</a>
-    </div>
-""", unsafe_allow_html=True)
+       for _, row in job_df.iterrows():
+    st.markdown(f"""
+        <div class="job-card">
+            <h4>💼 {row['title']}</h4>
+            <p>
+                <b>🏢 Company:</b> {row['company']}<br>
+                <b>📍 Location:</b> {row['location']}<br>
+                <b>📊 Match Score:</b> {row['Match Score (%)']}%
+            </p>
+            <a href="{row['job_link']}" target="_blank">🔗 Apply Now</a>
+        </div>
+    """, unsafe_allow_html=True)
 
         # Download button
         st.download_button(
