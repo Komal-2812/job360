@@ -16,28 +16,24 @@ else:
     parsed_data = st.session_state["resume_data"]
     job_df = scrape_jobs(parsed_data)
 
-    if job_df.empty:
-        st.warning("😕 No matching jobs found. Try adding more relevant skills or projects to your resume.")
-    else:
-        st.success(f"🎯 {len(job_df)} jobs found matching your skills!")
+    if not job_df.empty:
+    st.success(f"🎯 {len(job_df)} jobs found matching your skills!")
 
-        # Add match score for each job
-        match_scores = calculate_match(parsed_data["skills"], job_df["title"])
-        job_df["Match Score (%)"] = [score["match_score"] for score in match_scores]
+    match_scores = calculate_match(parsed_data["skills"], job_df["title"])
+    job_df["Match Score (%)"] = [score["match_score"] for score in match_scores]
 
-        # Display job cards
-       for _, row in job_df.iterrows():
-           st.markdown(f"""
-           <div class="job-card">
-               <h4>💼 {row['title']}</h4>
-                   <p>
-                        <b>🏢 Company:</b> {row['company']}<br>
-                        <b>📍 Location:</b> {row['location']}<br>
-                        <b>📊 Match Score:</b> {row['Match Score (%)']}%
-                    </p>
+    for _, row in job_df.iterrows():
+        st.markdown(f"""
+            <div class="job-card">
+                <h4>💼 {row['title']}</h4>
+                <p>
+                    <b>🏢 Company:</b> {row['company']}<br>
+                    <b>📍 Location:</b> {row['location']}<br>
+                    <b>📊 Match Score:</b> {row['Match Score (%)']}%
+                </p>
                 <a href="{row['job_link']}" target="_blank">🔗 Apply Now</a>
             </div>
-            """, unsafe_allow_html=True)
+        """, unsafe_allow_html=True)
 
         # Download button
         st.download_button(
