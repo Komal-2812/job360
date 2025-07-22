@@ -1,34 +1,31 @@
-/* Base styling */
+/* Base Typography */
 body {
     font-family: 'Segoe UI', sans-serif;
-    background-color: #f8f9fb;
-    color: #2c3e50;
     line-height: 1.6;
 }
 
 /* Headings */
 h1, h2, h3, h4, h5 {
-    color: #1a1a1a;
     font-weight: 700;
     letter-spacing: 0.5px;
     margin-top: 0.8em;
     margin-bottom: 0.4em;
 }
 
-/* Job Cards */
+/* Job Card */
 .job-card {
-    background-color: #1e1e1e !important;
-    color: #f0f0f0;
-    border: 1px solid #333;
-    padding: 20px;
+    background-color: #f9f9f9;
+    color: #222;
+    border: 1px solid #eaeaea;
     border-radius: 12px;
+    padding: 20px;
     margin: 20px 0;
-    box-shadow: 0px 4px 12px rgba(0, 255, 255, 0.05);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.03);
     transition: 0.3s all ease;
 }
 .job-card:hover {
     transform: scale(1.01);
-    box-shadow: 0 12px 24px rgba(0,0,0,0.4);
+    box-shadow: 0 12px 24px rgba(0,0,0,0.12);
 }
 
 /* Info Box */
@@ -37,11 +34,11 @@ h1, h2, h3, h4, h5 {
     padding: 18px;
     border-radius: 12px;
     margin: 20px 0;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.04);
     border-left: 6px solid #4a90e2;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.04);
 }
 
-/* Buttons */
+/* Button styling */
 button {
     background-color: #4a90e2;
     color: white;
@@ -49,41 +46,18 @@ button {
     border-radius: 6px;
     padding: 10px 18px;
     font-size: 16px;
-    transition: background-color 0.3s ease;
 }
 button:hover {
     background-color: #3f7acb;
 }
 
-/* Progress bar fix */
-div[data-testid="stProgress"] > div {
-    background-color: #e1ecff;
-}
-div[data-testid="stProgress"] > div > div {
-    background-color: #4a90e2;
-}
-
-/* File uploader */
+/* Uploader */
 section[data-testid="stFileUploader"] {
     border: 2px dashed #d9e2ef;
     background-color: #f9fbff;
     padding: 20px;
     border-radius: 10px;
     text-align: center;
-    transition: 0.3s all ease;
-}
-section[data-testid="stFileUploader"]:hover {
-    background-color: #eef4fd;
-}
-
-/* Responsive Columns (optional) */
-@media only screen and (max-width: 768px) {
-    .job-card {
-        padding: 15px;
-    }
-    .info-box {
-        padding: 15px;
-    }
 }
 
 /* Animations */
@@ -95,9 +69,9 @@ section[data-testid="stFileUploader"]:hover {
     animation: fadeUp 0.6s ease-out forwards;
 }
 
-/* Dark Mode Support (optional override via st.markdown) */
-.dark .job-card, .dark .info-box {
-    background-color: #1e1e1e !important;
-    color: #f0f0f0 !important;
-    border-color: #444 !important;
+/* Responsive tweaks */
+@media only screen and (max-width: 768px) {
+    .job-card, .info-box {
+        padding: 15px;
+    }
 }
